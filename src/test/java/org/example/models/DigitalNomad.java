@@ -1,2 +1,4 @@
-package org.example.models;public class DigitalNomad {
+package org.example.models;
+
+public class DigitalNomad {
 }
