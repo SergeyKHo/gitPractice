@@ -1,18 +1,11 @@
 package org.example.models.pages;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import org.example.models.Student;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 
 public class TextBoxPage extends BasePage {
-
-
-    WebDriver driver;
-    public TextBoxPage(WebDriver driver){
-        this.driver = driver;
-    }
 
     @FindBy(id = "userName")
     public WebElement fullNameInput;
@@ -51,8 +44,8 @@ public class TextBoxPage extends BasePage {
     }
     public  TextBoxPage submitBtmClick(){
         elementActions.waitElementToBeClickable (submitButtonEnter);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({behavior: 'auto', block: 'center'});", submitButtonEnter);
-        elementActions.clickElement (submitButtonEnter);
+        elementActions.scrollToTheElement(submitButtonEnter);
+               elementActions.clickElement (submitButtonEnter);
         return this;
     }
 
@@ -65,5 +58,15 @@ public class TextBoxPage extends BasePage {
         return this;
 
 }
+     public TextBoxPage fillUpTheForm(Student student){
+        fillUpFieldName(student.getFirstName());
+        fillUpFieldEmail(student.getEmail());
+        fillUpFieldCAddress(student.getCurrentAddress());
+        fillUpFieldPAddress(student.getCurrentAddress());
+        submitBtmClick();
+        testTexBoxEquals();
+        return this;
+
+     }
 
 }

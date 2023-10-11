@@ -23,7 +23,7 @@ public class CeckTextBox {
     @Test
     void test () {
         driver.get("https://demoqa.com/text-box/");
-        TextBoxPage textBoxPage = new TextBoxPage(driver);
+        TextBoxPage textBoxPage = new TextBoxPage();
         textBoxPage.fillUpFieldName("Ann")
                 .fillUpFieldEmail("ann@gamil.com")
                 .fillUpFieldCAddress("Asanbai")

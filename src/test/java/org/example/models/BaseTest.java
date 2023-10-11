@@ -33,7 +33,7 @@ public abstract class BaseTest {
         browserWindows =new BrowserWindowsPage();
         radioButtonPage =new RadioButtonPage();
         practiceFormPage = new PracticeFormPage();
-        textBoxPage = new TextBoxPage(driver);
+        textBoxPage = new TextBoxPage();
         fakeDataProvider = new FakeDataProvider();
         fakeDataProvider.createFakeStudent();
         registrationPage = new RegistrationPage();
