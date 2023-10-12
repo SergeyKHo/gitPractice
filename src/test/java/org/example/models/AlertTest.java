@@ -7,21 +7,13 @@ import org.testng.annotations.Test;
 
 
 public class AlertTest extends BaseTest {
-    WebDriver driver;
 
-    @BeforeClass
-    public void setUp() {
-        driver = Driver.getDriver();
-    }
 
     @Test
     void Test() {
         driver.get("https://demoqa.com/alerts");
         alertsFormPage.alertClickMe().alertClickMeTimerButton()
         .alertConfirmClick().alertSendClick();
-
-
-
 
 
     }

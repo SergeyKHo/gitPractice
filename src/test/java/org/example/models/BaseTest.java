@@ -24,6 +24,7 @@ public abstract class BaseTest {
     public NestedFramePage nestedFramePage;
     public WebTablePage webTablePage;
 
+
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() throws AWTException {
         driver = Driver.getDriver();

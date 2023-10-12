@@ -19,8 +19,8 @@ public abstract class BasePage {
     public JavascriptExecutor js;
     Actions actions =new Actions(getDriver());
     public AlertHelper alertHelper = new AlertHelper();
-   public FrameHelper frameHelper =new FrameHelper();
-   public WindowsHelper windowsHelper =new WindowsHelper();
+    public FrameHelper frameHelper =new FrameHelper();
+    public WindowsHelper windowsHelper =new WindowsHelper();
 
 
     public BasePage() {

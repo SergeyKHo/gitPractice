@@ -1,13 +1,9 @@
 package org.example.models;
 
-import org.example.driver.Driver;
 import org.example.models.pages.TextBoxPage;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class CeckTextBox extends BaseTest{
+public class TextBoxTest extends BaseTest{
 
 //    WebDriver driver;
 //    @BeforeClass

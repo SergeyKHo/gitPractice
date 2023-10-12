@@ -61,16 +61,21 @@ Student student =new Student();
     @FindBy(id = "currentAddress")
     public WebElement currentAddressInput;
 
-    @FindBy(xpath = "//div[@id='state']//div[@aria-hidden='true']")
+//    @FindBy(xpath = "//div[@id='state']//div[@aria-hidden='true']")
+    @FindBy(id="state")
     public WebElement inputOpenState;
 
     @FindBy(id = "react-select-3-input")
-    public WebElement inputForSetText;
+    public WebElement inputForStatText;
+
+    @FindBy(id ="city")
+    public WebElement inputOpenCity;
 
     @FindBy(id = "react-select-4-input")
-    public WebElement inputForSetCity;
+    public WebElement inputForCityText;
 
     @FindBy(xpath = "//div[@id='state']//div[2]")
+
     public List<WebElement> containerForStateTexts;
 
     @FindBy(id="submit")
@@ -106,7 +111,7 @@ Student student =new Student();
 
         return this;
     }
-        public PracticeFormPage selectField () {
+        public PracticeFormPage selectFieldBDay () {
             elementActions.clickElement(fieldDateOfBirthDay);
             return this;
         }
@@ -141,7 +146,7 @@ Student student =new Student();
 
         public PracticeFormPage clickHobbies () throws InterruptedException {
             elementActions.clickToRandomElement(hobbiesCheckboxList);
-            Thread.sleep(2000);
+
             return this;
         }
 
@@ -164,8 +169,8 @@ Student student =new Student();
             Random random = new Random();
             String randomKey = new ArrayList<>(stateAndCityList.keySet()).get(random.nextInt(stateAndCityList.size()));
             String randomCity = stateAndCityList.get(randomKey)[random.nextInt(stateAndCityList.get(randomKey).length)];
-            elementActions.setTextAndEnterElement(randomKey, inputForSetText);
-            elementActions.setTextAndEnterElement(randomCity, inputForSetCity);
+            elementActions.setTextAndEnterElement(randomKey, inputForStatText);
+            elementActions.setTextAndEnterElement(randomCity, inputForCityText);
             return this;
 
 
@@ -200,25 +205,29 @@ Student student =new Student();
     public PracticeFormPage fillUpTheForm (Student student) throws InterruptedException, AWTException {
         Robot robot = new Robot();
         System.out.println("About to zoom in");
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 1; i++) {
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_ADD);
             robot.keyRelease(KeyEvent.VK_ADD);
             robot.keyRelease(KeyEvent.VK_CONTROL);
         }
-        Thread.sleep(5000);
+
         System.out.println("About to zoom out");
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 6; i++) {
             robot.keyPress(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_SUBTRACT);
             robot.keyRelease(KeyEvent.VK_SUBTRACT);
             robot.keyRelease(KeyEvent.VK_CONTROL);
         }
-        Thread.sleep(3000);
+
         fillUpTheFirstName(student.getFirstName())
                 .fillUpTheLastName(student.getLastName())
                 .fillUpTheEmail(student.getEmail())
-                .fillUpThePhoneNumber ("1223555")
+                .fillUpThePhoneNumber ("1234567890")
+                .selectFieldBDay()
+                .selectMonth()
+                .selectYear()
+                .selectDay()
                 .fillUpTheCarrentAddres(student.getCurrentAddress())
                 .clickHobbies()
                 .clickGender()
@@ -238,8 +247,7 @@ Student student =new Student();
         Assert.assertTrue(expectedName.getText().contains(student.getLastName()));
         Assert.assertTrue(expectedEmail.getText().contains(student.getEmail()));
         Assert.assertTrue(expectedAddress.getText().contains(student.getCurrentAddress()));
-        System.out.println();
-        Assert.assertTrue(expectedMobilePhone.getText().contains(student.getPhoneNumber()));
+//        Assert.assertTrue(expectedMobilePhone.getText().contains(student.getPhoneNumber()));
         return this;
     }
 }

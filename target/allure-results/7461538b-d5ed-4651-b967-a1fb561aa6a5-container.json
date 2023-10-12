@@ -1,1 +1,0 @@
-{"uuid":"7461538b-d5ed-4651-b967-a1fb561aa6a5","name":"org.example.models.PracticeFormTest","children":["3c655acc-5d1e-408d-a82e-515ae5f5cace"],"befores":[{"name":"setUpBrowser","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1697032258185,"stop":1697032262311}],"afters":[],"start":1697032258110,"stop":1697032272706}
