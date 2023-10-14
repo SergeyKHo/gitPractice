@@ -68,6 +68,7 @@ public class ElementActions {
         int randomIndex = random.nextInt(optionsCount);
         // Выбираем опцию по случайному индексу
         select.selectByIndex(randomIndex);
+//        clickElement(element);
         return this;
     }
 

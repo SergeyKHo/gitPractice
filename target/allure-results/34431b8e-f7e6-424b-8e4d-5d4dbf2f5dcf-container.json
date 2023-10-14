@@ -1,0 +1,1 @@
+{"uuid":"34431b8e-f7e6-424b-8e4d-5d4dbf2f5dcf","name":"org.example.models.SelectMenuTest","children":["e640375b-be4c-4a13-a4b0-fa8b64daac39"],"befores":[{"name":"setUpBrowser","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1697199451047,"stop":1697199455251}],"afters":[],"start":1697199450981,"stop":1697199476512}
