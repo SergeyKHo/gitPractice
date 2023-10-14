@@ -1,2 +1,4 @@
-package os;public class Windows {
+package os;
+
+public class Windows {
 }

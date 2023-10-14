@@ -23,10 +23,12 @@ public abstract class BaseTest {
     public FramePage framePage;
     public NestedFramePage nestedFramePage;
     public WebTablePage webTablePage;
+    public SelectMenuPage selectMenuPage;
 
     @BeforeClass(alwaysRun = true)
     public void setUpBrowser() throws AWTException {
         driver = Driver.getDriver();
+        selectMenuPage =new SelectMenuPage();
         framePage =new FramePage();
         webTablePage =new WebTablePage();
         nestedFramePage =new NestedFramePage();
